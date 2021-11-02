@@ -18,6 +18,7 @@ options.addArguments("--headless");
 WebDriver driver = new ChromeDriver(options);
 		driver.get("https://google.co.in");
 		System.out.println("running--------");
+		System.out.println("==========="+driver.getTitle()+"=======");
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
