@@ -3,6 +3,7 @@ package com.base.test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.chrome.ChromeOptions;
 public class WebDriverBase {
 
 	public static void main(String[] args) {
@@ -11,8 +12,12 @@ public class WebDriverBase {
 		System.out.println("System directory is -> "+System.getProperty("user.dir"));
 		//System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/Driver/chromedriver.exe");
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver=new ChromeDriver();
+		//WebDriver driver=new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+options.addArguments("--headless");
+WebDriver driver = new ChromeDriver(options);
 		driver.get("https://google.co.in");
+		System.out.println("running--------");
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
