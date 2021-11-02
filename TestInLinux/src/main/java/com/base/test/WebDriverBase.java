@@ -9,7 +9,8 @@ public class WebDriverBase {
 		System.out.println("******************");
 		System.out.println("-----ChromeDriver Execution starts----");
 		System.out.println("System directory is -> "+System.getProperty("user.dir"));
-		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/Driver/chromedriver");
+		//System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/Driver/chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		WebDriver driver=new ChromeDriver();
 		driver.get("https://google.co.in");
 		try {
